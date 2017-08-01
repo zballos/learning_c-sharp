@@ -12,7 +12,11 @@ namespace Chapter6
         public string cpf;
         public string rg;
         public string address;
+        public int age;
 
-
+        public bool isGreaterOfAge()
+        {
+            return this.age >= 18;
+        }
     }
 }
