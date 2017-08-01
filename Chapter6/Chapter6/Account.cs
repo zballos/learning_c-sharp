@@ -16,12 +16,18 @@ namespace Chapter6
 
         public void toWithdraw(double value)
         {
-            this.balance -= value;
+            if (value <= this.balance && value > 0)
+            {
+                this.balance -= value;
+            }
         }
 
         public void toDeposit(double value)
         {
-            this.balance += value;
+            if (value > 0)
+            {
+                this.balance += value;
+            }
         }
 
         public void toTransfer(double value, Account other)
