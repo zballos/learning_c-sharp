@@ -47,5 +47,35 @@ namespace Chapter6
                 "\nAgency: " + acc3.agency
                 );
         }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            Account joana = new Account();
+            joana.number = 1;
+            joana.name = "Joana D'Arc";
+            joana.balance = 2500.0;
+
+            Account harry = new Account();
+            harry.number = 2;
+            harry.name = "Harry Cane";
+            harry.balance = 1800.0;
+
+            joana.toTransfer(500.0, harry);
+
+            MessageBox.Show("Balance " + joana.name + " : " + joana.balance);
+            MessageBox.Show("Balance " + harry.name + " : " + harry.balance);
+        }
+
+        private void btnAnualBalance_Click(object sender, EventArgs e)
+        {
+            Account joana = new Account();
+            joana.number = 1;
+            joana.name = "Joana D'Arc";
+            joana.balance = 2500.0;
+
+            double balanceAnual = joana.getAnnualIncome();
+
+            MessageBox.Show("Annual Balance of " + joana.name + " is " + balanceAnual);
+        }
     }
 }

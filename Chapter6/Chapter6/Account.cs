@@ -13,5 +13,35 @@ namespace Chapter6
         public double balance;
         public string cpf;
         public int agency;
+
+        public void toWithdraw(double value)
+        {
+            this.balance -= value;
+        }
+
+        public void toDeposit(double value)
+        {
+            this.balance += value;
+        }
+
+        public void toTransfer(double value, Account other)
+        {
+            this.toWithdraw(value);
+            other.toDeposit(value);
+        }
+
+        public double getAnnualIncome()
+        {
+            double balanceThisMonth = this.balance;
+
+            for (int i = 1; i <= 12; i++)
+            {
+                balanceThisMonth = balanceThisMonth * 1.005;
+            }
+
+            double result = balanceThisMonth - this.balance;
+
+            return result;
+        }
     }
 }
