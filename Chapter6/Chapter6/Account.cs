@@ -9,10 +9,9 @@ namespace Chapter6
     class Account
     {
         public int number;
-        public string name;
         public double balance;
-        public string cpf;
         public int agency;
+        public Client client;
 
         public void toWithdraw(double value)
         {
