@@ -50,20 +50,29 @@ namespace Chapter6
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            Account joana = new Account();
-            joana.number = 1;
-            joana.client.name = "Joana D'Arc";
-            joana.balance = 2500.0;
+            Account account1 = new Account();
+            account1.number = 1;
+            account1.client.name = "Joana D'Arc";
+            account1.balance = 2500.0;
 
-            Account harry = new Account();
-            harry.number = 2;
-            harry.client.name = "Harry Cane";
-            harry.balance = 1800.0;
+            Account account2 = new Account();
+            account2.number = 2;
+            account2.client.name = "Harry Cane";
+            account2.balance = 1800.0;
 
-            joana.toTransfer(500.0, harry);
+            if (account1.toWithdraw(100.0))
+            {
+                MessageBox.Show("Saque efetuado com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Não foi possivel sacar!");
+            }
 
-            MessageBox.Show("Balance " + joana.client.name + " : " + joana.balance);
-            MessageBox.Show("Balance " + harry.client.name + " : " + harry.balance);
+            account1.toTransfer(500.0, account2);
+
+            MessageBox.Show("Balance " + account1.client.name + " : " + account1.balance);
+            MessageBox.Show("Balance " + account2.client.name + " : " + account2.balance);
         }
 
         private void btnAnualBalance_Click(object sender, EventArgs e)

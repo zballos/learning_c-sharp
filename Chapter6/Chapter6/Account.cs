@@ -13,11 +13,28 @@ namespace Chapter6
         public int agency;
         public Client client;
 
-        public void toWithdraw(double value)
+        public bool toWithdraw(double value)
         {
-            if (value <= this.balance && value > 0)
+            if (value > this.balance || value < 0)
             {
-                this.balance -= value;
+                return false;
+            }
+            else
+            {
+                if (this.client.isGreaterOfAge())
+                {
+                    this.balance -= value;
+                    return true;
+                }
+                else if (value <= 200)
+                {
+                    this.balance -= value;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
