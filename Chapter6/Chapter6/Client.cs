@@ -8,15 +8,18 @@ namespace Chapter6
 {
     class Client
     {
-        public string name;
-        public string cpf;
-        public string rg;
-        public string address;
-        public int age;
+        public string Name { get; set; }
+        public string Cpf { get; set; }
+        public string Rg { get; set; }
+        public string Address { get; set; }
+        public int Age { get; set; }
 
-        public bool isGreaterOfAge()
+        public bool IsGreaterOfAge
         {
-            return this.age >= 18;
+            get
+            {
+                return this.Age >= 18;
+            }
         }
     }
 }

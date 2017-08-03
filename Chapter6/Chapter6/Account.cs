@@ -21,7 +21,7 @@ namespace Chapter6
             }
             else
             {
-                if (this.Titular.isGreaterOfAge())
+                if (this.Titular.IsGreaterOfAge)
                 {
                     this.Balance -= value;
                     return true;
