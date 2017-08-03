@@ -8,9 +8,9 @@ namespace Chapter6
 {
     class Account
     {
-        public int number;
+        public int Number { get; set; }
         public double Balance { get; private set; }
-        public int agency;
+        public int Agency { get; set; }
         public Client Titular { get; set; }
 
         public bool Withdraw(double value)

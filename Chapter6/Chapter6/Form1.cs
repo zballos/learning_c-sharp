@@ -20,12 +20,12 @@ namespace Chapter6
         private void btnClass_Click(object sender, EventArgs e)
         {
             Account acc1 = new Account();
-            acc1.number = 1;
+            acc1.Number = 1;
             acc1.Titular.name = "Rihanna";
             acc1.Deposit(2500000.0);
 
             Account acc2 = new Account();
-            acc2.number = 2;
+            acc2.Number = 2;
             acc2.Titular.name = "Josep of border";
             acc2.Deposit(500.0);
 
@@ -33,30 +33,30 @@ namespace Chapter6
             MessageBox.Show("Balance of " + acc2.Titular.name + ": " + acc2.Balance);
 
             Account acc3 = new Account();
-            acc3.number = 3;
+            acc3.Number = 3;
             acc3.Titular.name = "New Guy";
             acc3.Deposit(5000.0);
             acc3.Titular.cpf = "001.002.003-04";
-            acc3.agency = 14;
+            acc3.Agency = 14;
 
             MessageBox.Show(
-                "Number: " + acc3.number +
+                "Number: " + acc3.Number +
                 "\nName: " + acc3.Titular.name +
                 "\nBalance: " + acc3.Balance +
                 "\nCPF: " + acc3.Titular.cpf +
-                "\nAgency: " + acc3.agency
+                "\nAgency: " + acc3.Agency
                 );
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
             Account account1 = new Account();
-            account1.number = 1;
+            account1.Number = 1;
             account1.Titular.name = "Joana D'Arc";
             account1.Deposit(2500.0);
 
             Account account2 = new Account();
-            account2.number = 2;
+            account2.Number = 2;
             account2.Titular.name = "Harry Cane";
             account2.Deposit(1800.0);
 
@@ -78,7 +78,7 @@ namespace Chapter6
         private void btnAnualBalance_Click(object sender, EventArgs e)
         {
             Account accountWhatever = new Account();
-            accountWhatever.number = 1;
+            accountWhatever.Number = 1;
             accountWhatever.Deposit(2500.0);
 
             Client joana = new Client();
