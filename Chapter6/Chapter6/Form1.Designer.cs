@@ -32,6 +32,7 @@
             this.btnTransfer = new System.Windows.Forms.Button();
             this.btnAnualBalance = new System.Windows.Forms.Button();
             this.tbTitular = new System.Windows.Forms.TextBox();
+            this.btnBankBalance = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClass
@@ -66,16 +67,27 @@
             // 
             // tbTitular
             // 
-            this.tbTitular.Location = new System.Drawing.Point(202, 368);
+            this.tbTitular.Location = new System.Drawing.Point(202, 190);
             this.tbTitular.Name = "tbTitular";
             this.tbTitular.Size = new System.Drawing.Size(182, 20);
             this.tbTitular.TabIndex = 3;
+            // 
+            // btnBankBalance
+            // 
+            this.btnBankBalance.Location = new System.Drawing.Point(202, 235);
+            this.btnBankBalance.Name = "btnBankBalance";
+            this.btnBankBalance.Size = new System.Drawing.Size(182, 23);
+            this.btnBankBalance.TabIndex = 4;
+            this.btnBankBalance.Text = "Saldo Total";
+            this.btnBankBalance.UseVisualStyleBackColor = true;
+            this.btnBankBalance.Click += new System.EventHandler(this.btnBankBalance_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 550);
+            this.Controls.Add(this.btnBankBalance);
             this.Controls.Add(this.tbTitular);
             this.Controls.Add(this.btnAnualBalance);
             this.Controls.Add(this.btnTransfer);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.Button btnAnualBalance;
         private System.Windows.Forms.TextBox tbTitular;
+        private System.Windows.Forms.Button btnBankBalance;
     }
 }
 

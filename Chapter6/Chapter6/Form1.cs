@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Chapter6.Objects;
 
 namespace Chapter6
 {
@@ -111,6 +112,21 @@ namespace Chapter6
                 Titular = new Client("Edson Zeballos", 25)
             };
             tbTitular.Text = acc.Titular.Name;
+        }
+
+        private void btnBankBalance_Click(object sender, EventArgs e)
+        {
+            Account acc = new Account();
+            acc.Deposit(2000);
+
+            SavingsAccount sacc = new SavingsAccount();
+            sacc.Deposit(20);
+
+            BankBalance bank = new BankBalance();
+            bank.SumAccount(acc);
+            bank.SumAccount(sacc);
+
+            MessageBox.Show("Saldo do banco é: " + bank.Total);
         }
     }
 }
