@@ -12,6 +12,8 @@ namespace Chapter6
 {
     public partial class Form2 : Form
     {
+        private Account acc;
+
         public Form2()
         {
             InitializeComponent();
@@ -19,15 +21,29 @@ namespace Chapter6
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Account acc = new Account() {
+            this.acc = new Account() {
                 Number = 100
             };
-            acc.Deposit(250.0);
-            acc.Titular = new Client("Van helsing");
+            this.acc.Deposit(250.0);
+            this.acc.Titular = new Client("Van helsing");
 
-            txtTitular.Text = acc.Titular.Name;
-            txtBalance.Text = Convert.ToString(acc.Balance);
-            txtNumber.Text = Convert.ToString(acc.Number);
+            this.ShowAccount();
+        }
+
+        private void btnDep_Click(object sender, EventArgs e)
+        {
+            double valueDep = Convert.ToDouble(textValue.Text);
+
+            this.acc.Deposit(valueDep);
+
+            this.ShowAccount();
+        }
+
+        private void ShowAccount()
+        {
+            txtTitular.Text = this.acc.Titular.Name;
+            txtBalance.Text = Convert.ToString(this.acc.Balance);
+            txtNumber.Text = Convert.ToString(this.acc.Number);
         }
     }
 }
