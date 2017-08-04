@@ -25,7 +25,7 @@ namespace Chapter6
                 Number = 100
             };
             this.acc.Deposit(250.0);
-            this.acc.Titular = new Client("Van helsing");
+            this.acc.Titular = new Client("Van helsing", 45);
 
             this.ShowAccount();
         }
@@ -44,6 +44,15 @@ namespace Chapter6
             txtTitular.Text = this.acc.Titular.Name;
             txtBalance.Text = Convert.ToString(this.acc.Balance);
             txtNumber.Text = Convert.ToString(this.acc.Number);
+        }
+
+        private void btnSaq_Click(object sender, EventArgs e)
+        {
+            double valueDep = Convert.ToDouble(textValue.Text);
+
+            this.acc.Withdraw(valueDep);
+
+            this.ShowAccount();
         }
     }
 }

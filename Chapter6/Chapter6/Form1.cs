@@ -22,14 +22,14 @@ namespace Chapter6
             Account acc1 = new Account()
             {
                 Number = 1,
-                Titular = new Client("Rihanna")
+                Titular = new Client("Rihanna", 17)
             };
             acc1.Deposit(2500000.0);
 
             Account acc2 = new Account()
             {
                 Number = 2,
-                Titular = new Client("Josep of border")
+                Titular = new Client("Josep of border", 31)
             };
             acc2.Deposit(500.0);
 
@@ -40,7 +40,7 @@ namespace Chapter6
             {
                 Number = 3,
                 Agency = 14,
-                Titular = new Client("New Guy")
+                Titular = new Client("New Guy", 31)
             };
             acc3.Deposit(5000.0);
             acc3.Titular.Cpf = "001.002.003-04";
@@ -59,14 +59,14 @@ namespace Chapter6
             Account account1 = new Account()
             {
                 Number = 1,
-                Titular = new Client("Joana D'Arc")
+                Titular = new Client("Joana D'Arc", 40)
             };
             account1.Deposit(2500.0);
 
             Account account2 = new Account()
             {
                 Number = 2,
-                Titular = new Client("Harry Kane")
+                Titular = new Client("Harry Kane", 23)
             };
             account2.Deposit(1800.0);
 
@@ -87,7 +87,7 @@ namespace Chapter6
 
         private void btnAnualBalance_Click(object sender, EventArgs e)
         {
-            Client joana = new Client("Joana D'Arc")
+            Client joana = new Client("Joana D'Arc", 40)
             {
                 Cpf = "000.000.000-00"
             };
@@ -108,7 +108,7 @@ namespace Chapter6
         {
             Account acc = new Account()
             {
-                Titular = new Client("Edson Zeballos")
+                Titular = new Client("Edson Zeballos", 25)
             };
             tbTitular.Text = acc.Titular.Name;
         }
