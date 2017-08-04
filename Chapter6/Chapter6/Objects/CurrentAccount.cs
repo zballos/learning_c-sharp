@@ -10,7 +10,7 @@ namespace Chapter6.Objects
     {
         public override void Update(double tax)
         {
-            this.Balance += this.Balance * 2 * tax;
+            base.Update(2 * tax);
         }
     }
 }
