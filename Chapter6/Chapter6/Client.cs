@@ -14,6 +14,18 @@ namespace Chapter6
         public string Address { get; set; }
         public int Age { get; set; }
 
+        // The client must have a name
+        public Client(string nameClient)
+        {
+            this.Name = nameClient;
+        }
+
+        public Client(string name, int age)
+        {
+            this.Name = name;
+            this.Age = age;
+        }
+
         public bool IsGreaterOfAge
         {
             get

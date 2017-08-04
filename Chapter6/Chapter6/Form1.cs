@@ -77,15 +77,17 @@ namespace Chapter6
 
         private void btnAnualBalance_Click(object sender, EventArgs e)
         {
-            Account accountWhatever = new Account();
-            accountWhatever.Number = 1;
+            Client joana = new Client("Joana D'Arc")
+            {
+                Cpf = "000.000.000-00"
+            };
+
+            Account accountWhatever = new Account()
+            {
+                Number = 1,
+                Titular = joana
+            };
             accountWhatever.Deposit(2500.0);
-
-            Client joana = new Client();
-            joana.Name = "Joana D'Arc";
-            joana.Cpf = "000.000.000-00";
-
-            accountWhatever.Titular = joana;
 
             double balanceAnual = accountWhatever.AnnualIncome();
 
