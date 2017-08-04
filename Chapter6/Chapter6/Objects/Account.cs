@@ -9,11 +9,11 @@ namespace Chapter6
     class Account
     {
         public int Number { get; set; }
-        public double Balance { get; private set; }
+        public double Balance { get; protected set; }
         public int Agency { get; set; }
         public Client Titular { get; set; }
 
-        public bool Withdraw(double value)
+        public virtual bool Withdraw(double value)
         {
             if (value > this.Balance || value < 0)
             {
@@ -38,7 +38,7 @@ namespace Chapter6
             }
         }
 
-        public void Deposit(double value)
+        public virtual void Deposit(double value)
         {
             if (value > 0)
             {
