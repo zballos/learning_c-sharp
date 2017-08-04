@@ -36,6 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBalance = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSaq = new System.Windows.Forms.Button();
+            this.btnDep = new System.Windows.Forms.Button();
+            this.textValue = new System.Windows.Forms.TextBox();
+            this.btnTransfer = new System.Windows.Forms.Button();
+            this.comboTransfer = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // comboAccounts
@@ -104,11 +110,71 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Saldo";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(70, 282);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Valor";
+            // 
+            // btnSaq
+            // 
+            this.btnSaq.Location = new System.Drawing.Point(155, 339);
+            this.btnSaq.Name = "btnSaq";
+            this.btnSaq.Size = new System.Drawing.Size(97, 23);
+            this.btnSaq.TabIndex = 12;
+            this.btnSaq.Text = "Sacar";
+            this.btnSaq.UseVisualStyleBackColor = true;
+            this.btnSaq.Click += new System.EventHandler(this.btnSaq_Click);
+            // 
+            // btnDep
+            // 
+            this.btnDep.Location = new System.Drawing.Point(36, 339);
+            this.btnDep.Name = "btnDep";
+            this.btnDep.Size = new System.Drawing.Size(91, 23);
+            this.btnDep.TabIndex = 11;
+            this.btnDep.Text = "Depositar";
+            this.btnDep.UseVisualStyleBackColor = true;
+            this.btnDep.Click += new System.EventHandler(this.btnDep_Click);
+            // 
+            // textValue
+            // 
+            this.textValue.Location = new System.Drawing.Point(138, 279);
+            this.textValue.Name = "textValue";
+            this.textValue.Size = new System.Drawing.Size(114, 20);
+            this.textValue.TabIndex = 10;
+            // 
+            // btnTransfer
+            // 
+            this.btnTransfer.Location = new System.Drawing.Point(275, 339);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(99, 23);
+            this.btnTransfer.TabIndex = 14;
+            this.btnTransfer.Text = "Transferir Para";
+            this.btnTransfer.UseVisualStyleBackColor = true;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
+            // 
+            // comboTransfer
+            // 
+            this.comboTransfer.FormattingEnabled = true;
+            this.comboTransfer.Location = new System.Drawing.Point(275, 368);
+            this.comboTransfer.Name = "comboTransfer";
+            this.comboTransfer.Size = new System.Drawing.Size(121, 21);
+            this.comboTransfer.TabIndex = 15;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 409);
+            this.ClientSize = new System.Drawing.Size(458, 462);
+            this.Controls.Add(this.comboTransfer);
+            this.Controls.Add(this.btnTransfer);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnSaq);
+            this.Controls.Add(this.btnDep);
+            this.Controls.Add(this.textValue);
             this.Controls.Add(this.txtBalance);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNumber);
@@ -135,5 +201,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBalance;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSaq;
+        private System.Windows.Forms.Button btnDep;
+        private System.Windows.Forms.TextBox textValue;
+        private System.Windows.Forms.Button btnTransfer;
+        private System.Windows.Forms.ComboBox comboTransfer;
     }
 }

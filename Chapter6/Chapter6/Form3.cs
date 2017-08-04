@@ -43,18 +43,57 @@ namespace Chapter6
             foreach(Account acc in accounts)
             {
                 comboAccounts.Items.Add(acc.Titular.Name);
+                comboTransfer.Items.Add(acc.Titular.Name);
             }
         }
 
         private void comboAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedItem = comboAccounts.SelectedIndex;
+            Account acc = this.GetAccountSelected();
 
-            Account acc = accounts[selectedItem];
+            this.ShowAccount(acc);
+        }
 
+        private void ShowAccount(Account acc)
+        {
             txtTitular.Text = acc.Titular.Name;
-            txtNumber.Text = Convert.ToString(acc.Number);
             txtBalance.Text = Convert.ToString(acc.Balance);
+            txtNumber.Text = Convert.ToString(acc.Number);
+        }
+
+        private Account GetAccountSelected()
+        {
+            int selectedItem = comboAccounts.SelectedIndex;
+            return this.accounts[selectedItem];
+        }
+
+        private void btnDep_Click(object sender, EventArgs e)
+        {
+            Account acc = this.GetAccountSelected();
+            
+            acc.Deposit(Convert.ToDouble(textValue.Text));
+
+            this.ShowAccount(acc);
+        }
+
+        private void btnSaq_Click(object sender, EventArgs e)
+        {
+            Account acc = this.GetAccountSelected();
+            acc.Withdraw(Convert.ToDouble(textValue.Text));
+
+            this.ShowAccount(acc);
+        }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            int dest = comboTransfer.SelectedIndex;
+
+            Account acc = this.GetAccountSelected();
+
+            double value = Convert.ToDouble(textValue.Text);
+            acc.Transfer(value, this.accounts[dest]);
+
+            this.ShowAccount(acc);
         }
     }
 }
