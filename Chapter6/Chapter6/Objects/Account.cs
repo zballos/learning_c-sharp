@@ -65,5 +65,10 @@ namespace Chapter6
 
             return result;
         }
+
+        public virtual void Update(double tax)
+        {
+            this.Balance += this.Balance * tax;
+        }
     }
 }

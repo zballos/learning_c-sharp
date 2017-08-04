@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Chapter6.Objects
 {
-    class BankBalance
+    class CurrentAccount : Account
     {
-        public double Total { get; private set; }
-
-        public void SumAccount(Account account)
+        public override void Update(double tax)
         {
-            this.Total += account.Balance;
+            this.Balance += this.Balance * 2 * tax;
         }
     }
 }

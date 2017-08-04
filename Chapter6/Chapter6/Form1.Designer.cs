@@ -33,6 +33,7 @@
             this.btnAnualBalance = new System.Windows.Forms.Button();
             this.tbTitular = new System.Windows.Forms.TextBox();
             this.btnBankBalance = new System.Windows.Forms.Button();
+            this.btnAccountUpdater = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClass
@@ -82,11 +83,22 @@
             this.btnBankBalance.UseVisualStyleBackColor = true;
             this.btnBankBalance.Click += new System.EventHandler(this.btnBankBalance_Click);
             // 
+            // btnAccountUpdater
+            // 
+            this.btnAccountUpdater.Location = new System.Drawing.Point(202, 282);
+            this.btnAccountUpdater.Name = "btnAccountUpdater";
+            this.btnAccountUpdater.Size = new System.Drawing.Size(182, 23);
+            this.btnAccountUpdater.TabIndex = 5;
+            this.btnAccountUpdater.Text = "Atualiza Contas";
+            this.btnAccountUpdater.UseVisualStyleBackColor = true;
+            this.btnAccountUpdater.Click += new System.EventHandler(this.btnAccountUpdater_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 550);
+            this.Controls.Add(this.btnAccountUpdater);
             this.Controls.Add(this.btnBankBalance);
             this.Controls.Add(this.tbTitular);
             this.Controls.Add(this.btnAnualBalance);
@@ -107,6 +119,7 @@
         private System.Windows.Forms.Button btnAnualBalance;
         private System.Windows.Forms.TextBox tbTitular;
         private System.Windows.Forms.Button btnBankBalance;
+        private System.Windows.Forms.Button btnAccountUpdater;
     }
 }
 

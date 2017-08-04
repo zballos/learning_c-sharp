@@ -40,5 +40,10 @@ namespace Chapter6.Objects
                 this.Balance += (value + 0.10);
             }
         }
+
+        public override void Update(double tax)
+        {
+            this.Balance += this.Balance * 3 * tax;
+        }
     }
 }
