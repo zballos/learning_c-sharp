@@ -19,48 +19,58 @@ namespace Chapter6
 
         private void btnClass_Click(object sender, EventArgs e)
         {
-            Account acc1 = new Account();
-            acc1.number = 1;
-            acc1.client.name = "Rihanna";
-            acc1.balance = 2500000.0;
+            Account acc1 = new Account()
+            {
+                Number = 1,
+                Titular = new Client("Rihanna", 17)
+            };
+            acc1.Deposit(2500000.0);
 
-            Account acc2 = new Account();
-            acc2.number = 2;
-            acc2.client.name = "Josep of border";
-            acc2.balance = 500.0;
+            Account acc2 = new Account()
+            {
+                Number = 2,
+                Titular = new Client("Josep of border", 31)
+            };
+            acc2.Deposit(500.0);
 
-            MessageBox.Show("Balance of " + acc1.client.name + ": " + acc1.balance);
-            MessageBox.Show("Balance of " + acc2.client.name + ": " + acc2.balance);
+            MessageBox.Show("Balance of " + acc1.Titular.Name + ": " + acc1.Balance);
+            MessageBox.Show("Balance of " + acc2.Titular.Name + ": " + acc2.Balance);
 
-            Account acc3 = new Account();
-            acc3.number = 3;
-            acc3.client.name = "New Guy";
-            acc3.balance = 5000.0;
-            acc3.client.cpf = "001.002.003-04";
-            acc3.agency = 14;
+            Account acc3 = new Account()
+            {
+                Number = 3,
+                Agency = 14,
+                Titular = new Client("New Guy", 31)
+            };
+            acc3.Deposit(5000.0);
+            acc3.Titular.Cpf = "001.002.003-04";
 
             MessageBox.Show(
-                "Number: " + acc3.number +
-                "\nName: " + acc3.client.name +
-                "\nBalance: " + acc3.balance +
-                "\nCPF: " + acc3.client.cpf +
-                "\nAgency: " + acc3.agency
+                "Number: " + acc3.Number +
+                "\nName: " + acc3.Titular.Name +
+                "\nBalance: " + acc3.Balance +
+                "\nCPF: " + acc3.Titular.Cpf +
+                "\nAgency: " + acc3.Agency
                 );
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            Account account1 = new Account();
-            account1.number = 1;
-            account1.client.name = "Joana D'Arc";
-            account1.balance = 2500.0;
+            Account account1 = new Account()
+            {
+                Number = 1,
+                Titular = new Client("Joana D'Arc", 40)
+            };
+            account1.Deposit(2500.0);
 
-            Account account2 = new Account();
-            account2.number = 2;
-            account2.client.name = "Harry Cane";
-            account2.balance = 1800.0;
+            Account account2 = new Account()
+            {
+                Number = 2,
+                Titular = new Client("Harry Kane", 23)
+            };
+            account2.Deposit(1800.0);
 
-            if (account1.toWithdraw(100.0))
+            if (account1.Withdraw(100.0))
             {
                 MessageBox.Show("Saque efetuado com sucesso!");
             }
@@ -69,27 +79,38 @@ namespace Chapter6
                 MessageBox.Show("Não foi possivel sacar!");
             }
 
-            account1.toTransfer(500.0, account2);
+            account1.Transfer(500.0, account2);
 
-            MessageBox.Show("Balance " + account1.client.name + " : " + account1.balance);
-            MessageBox.Show("Balance " + account2.client.name + " : " + account2.balance);
+            MessageBox.Show("Balance " + account1.Titular.Name + " : " + account1.Balance);
+            MessageBox.Show("Balance " + account2.Titular.Name + " : " + account2.Balance);
         }
 
         private void btnAnualBalance_Click(object sender, EventArgs e)
         {
-            Account accountWhatever = new Account();
-            accountWhatever.number = 1;
-            accountWhatever.balance = 2500.0;
+            Client joana = new Client("Joana D'Arc", 40)
+            {
+                Cpf = "000.000.000-00"
+            };
 
-            Client joana = new Client();
-            joana.name = "Joana D'Arc";
-            joana.cpf = "000.000.000-00";
+            Account accountWhatever = new Account()
+            {
+                Number = 1,
+                Titular = joana
+            };
+            accountWhatever.Deposit(2500.0);
 
-            accountWhatever.client = joana;
+            double balanceAnual = accountWhatever.AnnualIncome();
 
-            double balanceAnual = accountWhatever.getAnnualIncome();
+            MessageBox.Show("Annual Balance of " + accountWhatever.Titular.Name + " is " + balanceAnual);
+        }
 
-            MessageBox.Show("Annual Balance of " + accountWhatever.client.name + " is " + balanceAnual);
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Account acc = new Account()
+            {
+                Titular = new Client("Edson Zeballos", 25)
+            };
+            tbTitular.Text = acc.Titular.Name;
         }
     }
 }

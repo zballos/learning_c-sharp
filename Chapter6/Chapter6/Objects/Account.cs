@@ -8,27 +8,27 @@ namespace Chapter6
 {
     class Account
     {
-        public int number;
-        public double balance;
-        public int agency;
-        public Client client;
+        public int Number { get; set; }
+        public double Balance { get; private set; }
+        public int Agency { get; set; }
+        public Client Titular { get; set; }
 
-        public bool toWithdraw(double value)
+        public bool Withdraw(double value)
         {
-            if (value > this.balance || value < 0)
+            if (value > this.Balance || value < 0)
             {
                 return false;
             }
             else
             {
-                if (this.client.isGreaterOfAge())
+                if (this.Titular.IsGreaterOfAge)
                 {
-                    this.balance -= value;
+                    this.Balance -= value;
                     return true;
                 }
                 else if (value <= 200)
                 {
-                    this.balance -= value;
+                    this.Balance -= value;
                     return true;
                 }
                 else
@@ -38,30 +38,30 @@ namespace Chapter6
             }
         }
 
-        public void toDeposit(double value)
+        public void Deposit(double value)
         {
             if (value > 0)
             {
-                this.balance += value;
+                this.Balance += value;
             }
         }
 
-        public void toTransfer(double value, Account other)
+        public void Transfer(double value, Account other)
         {
-            this.toWithdraw(value);
-            other.toDeposit(value);
+            this.Withdraw(value);
+            other.Deposit(value);
         }
 
-        public double getAnnualIncome()
+        public double AnnualIncome()
         {
-            double balanceThisMonth = this.balance;
+            double balanceThisMonth = this.Balance;
 
             for (int i = 1; i <= 12; i++)
             {
                 balanceThisMonth = balanceThisMonth * 1.005;
             }
 
-            double result = balanceThisMonth - this.balance;
+            double result = balanceThisMonth - this.Balance;
 
             return result;
         }

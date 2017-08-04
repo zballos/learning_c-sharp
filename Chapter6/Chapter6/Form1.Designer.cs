@@ -31,11 +31,12 @@
             this.btnClass = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
             this.btnAnualBalance = new System.Windows.Forms.Button();
+            this.tbTitular = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnClass
             // 
-            this.btnClass.Location = new System.Drawing.Point(44, 49);
+            this.btnClass.Location = new System.Drawing.Point(202, 36);
             this.btnClass.Name = "btnClass";
             this.btnClass.Size = new System.Drawing.Size(182, 23);
             this.btnClass.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // btnTransfer
             // 
-            this.btnTransfer.Location = new System.Drawing.Point(44, 100);
+            this.btnTransfer.Location = new System.Drawing.Point(202, 87);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(182, 23);
             this.btnTransfer.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // btnAnualBalance
             // 
-            this.btnAnualBalance.Location = new System.Drawing.Point(44, 152);
+            this.btnAnualBalance.Location = new System.Drawing.Point(202, 139);
             this.btnAnualBalance.Name = "btnAnualBalance";
             this.btnAnualBalance.Size = new System.Drawing.Size(182, 23);
             this.btnAnualBalance.TabIndex = 2;
@@ -63,17 +64,27 @@
             this.btnAnualBalance.UseVisualStyleBackColor = true;
             this.btnAnualBalance.Click += new System.EventHandler(this.btnAnualBalance_Click);
             // 
+            // tbTitular
+            // 
+            this.tbTitular.Location = new System.Drawing.Point(202, 368);
+            this.tbTitular.Name = "tbTitular";
+            this.tbTitular.Size = new System.Drawing.Size(182, 20);
+            this.tbTitular.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(597, 550);
+            this.Controls.Add(this.tbTitular);
             this.Controls.Add(this.btnAnualBalance);
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.btnClass);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,6 +93,7 @@
         private System.Windows.Forms.Button btnClass;
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.Button btnAnualBalance;
+        private System.Windows.Forms.TextBox tbTitular;
     }
 }
 
