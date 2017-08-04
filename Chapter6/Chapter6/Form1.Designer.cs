@@ -34,6 +34,7 @@
             this.tbTitular = new System.Windows.Forms.TextBox();
             this.btnBankBalance = new System.Windows.Forms.Button();
             this.btnAccountUpdater = new System.Windows.Forms.Button();
+            this.btnArray = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClass
@@ -93,11 +94,22 @@
             this.btnAccountUpdater.UseVisualStyleBackColor = true;
             this.btnAccountUpdater.Click += new System.EventHandler(this.btnAccountUpdater_Click);
             // 
+            // btnArray
+            // 
+            this.btnArray.Location = new System.Drawing.Point(202, 325);
+            this.btnArray.Name = "btnArray";
+            this.btnArray.Size = new System.Drawing.Size(182, 23);
+            this.btnArray.TabIndex = 6;
+            this.btnArray.Text = "Saldos em Array";
+            this.btnArray.UseVisualStyleBackColor = true;
+            this.btnArray.Click += new System.EventHandler(this.btnArray_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 550);
+            this.Controls.Add(this.btnArray);
             this.Controls.Add(this.btnAccountUpdater);
             this.Controls.Add(this.btnBankBalance);
             this.Controls.Add(this.tbTitular);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.TextBox tbTitular;
         private System.Windows.Forms.Button btnBankBalance;
         private System.Windows.Forms.Button btnAccountUpdater;
+        private System.Windows.Forms.Button btnArray;
     }
 }
 

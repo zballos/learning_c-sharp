@@ -156,5 +156,26 @@ namespace Chapter6
             MessageBox.Show("Saldo SACC é: " + sacc.Balance);
             MessageBox.Show("Saldo CACC é: " + cacc.Balance);
         }
+
+        private void btnArray_Click(object sender, EventArgs e)
+        {
+            Account[] accounts = new Account[3];
+            accounts[0] = new Account();
+            accounts[1] = new SavingsAccount();
+            accounts[2] = new CurrentAccount();
+
+            for (int i = 0; i < accounts.Length; i++)
+            {
+                accounts[i].Deposit(150 * (i+1));
+            }
+
+            // or
+
+            foreach (Account acc in accounts)
+            {
+                MessageBox.Show("Saldo da conta é: " + acc.Balance);
+            }
+
+        }
     }
 }
