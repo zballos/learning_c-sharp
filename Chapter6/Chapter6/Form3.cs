@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Chapter6.Objects;
 
 namespace Chapter6
 {
@@ -23,18 +24,18 @@ namespace Chapter6
         {
             accounts = new Account[3];
 
-            accounts[0] = new Account {
+            accounts[0] = new SavingsAccount {
                 Number = 1,
                 Titular = new Client("João lima", 45)
             };
 
-            accounts[1] = new Account
+            accounts[1] = new CurrentAccount
             {
                 Number = 2,
                 Titular = new Client("Maria Carey", 40)
             };
 
-            accounts[2] = new Account
+            accounts[2] = new SavingsAccount
             {
                 Number = 3,
                 Titular = new Client("Marcela Pam", 25)

@@ -20,14 +20,14 @@ namespace Chapter6
 
         private void btnClass_Click(object sender, EventArgs e)
         {
-            Account acc1 = new Account()
+            Account acc1 = new CurrentAccount()
             {
                 Number = 1,
                 Titular = new Client("Rihanna", 17)
             };
             acc1.Deposit(2500000.0);
 
-            Account acc2 = new Account()
+            Account acc2 = new CurrentAccount()
             {
                 Number = 2,
                 Titular = new Client("Josep of border", 31)
@@ -37,7 +37,7 @@ namespace Chapter6
             MessageBox.Show("Balance of " + acc1.Titular.Name + ": " + acc1.Balance);
             MessageBox.Show("Balance of " + acc2.Titular.Name + ": " + acc2.Balance);
 
-            Account acc3 = new Account()
+            Account acc3 = new CurrentAccount()
             {
                 Number = 3,
                 Agency = 14,
@@ -57,14 +57,14 @@ namespace Chapter6
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            Account account1 = new Account()
+            Account account1 = new SavingsAccount()
             {
                 Number = 1,
                 Titular = new Client("Joana D'Arc", 40)
             };
             account1.Deposit(2500.0);
 
-            Account account2 = new Account()
+            Account account2 = new CurrentAccount()
             {
                 Number = 2,
                 Titular = new Client("Harry Kane", 23)
@@ -93,7 +93,7 @@ namespace Chapter6
                 Cpf = "000.000.000-00"
             };
 
-            Account accountWhatever = new Account()
+            Account accountWhatever = new CurrentAccount()
             {
                 Number = 1,
                 Titular = joana
@@ -107,7 +107,7 @@ namespace Chapter6
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Account acc = new Account()
+            Account acc = new SavingsAccount()
             {
                 Titular = new Client("Edson Zeballos", 25)
             };
@@ -116,7 +116,7 @@ namespace Chapter6
 
         private void btnBankBalance_Click(object sender, EventArgs e)
         {
-            Account acc = new Account();
+            Account acc = new SavingsAccount();
             acc.Deposit(2000);
 
             SavingsAccount sacc = new SavingsAccount();
@@ -131,7 +131,7 @@ namespace Chapter6
 
         private void btnAccountUpdater_Click(object sender, EventArgs e)
         {
-            Account acc = new Account();
+            Account acc = new CurrentAccount();
             acc.Deposit(2300.5);
 
             SavingsAccount sacc = new SavingsAccount();
@@ -160,7 +160,7 @@ namespace Chapter6
         private void btnArray_Click(object sender, EventArgs e)
         {
             Account[] accounts = new Account[3];
-            accounts[0] = new Account();
+            accounts[0] = new CurrentAccount();
             accounts[1] = new SavingsAccount();
             accounts[2] = new CurrentAccount();
 
