@@ -13,6 +13,7 @@ namespace Chapter6
         public string Rg { get; set; }
         public string Address { get; set; }
         public int Age { get; set; }
+        public string Documentos { get; set; }
 
         // The client must have a name and age
         public Client(string name, int age)
@@ -26,6 +27,18 @@ namespace Chapter6
             get
             {
                 return this.Age >= 18;
+            }
+        }
+
+        public bool CanOpenAccount
+        {
+            get
+            {
+                var greaterofAge = this.IsGreaterOfAge;
+                var emancipated = this.Documentos.Contains("Emancipated");
+                var hasCpf = !string.IsNullOrEmpty(this.Cpf);
+
+                return (greaterofAge || emancipated) && hasCpf;
             }
         }
     }
