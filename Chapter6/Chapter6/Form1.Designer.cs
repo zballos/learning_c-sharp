@@ -35,6 +35,8 @@
             this.btnBankBalance = new System.Windows.Forms.Button();
             this.btnAccountUpdater = new System.Windows.Forms.Button();
             this.btnArray = new System.Windows.Forms.Button();
+            this.btnTotal = new System.Windows.Forms.Button();
+            this.btnPoupanca = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClass
@@ -104,11 +106,33 @@
             this.btnArray.UseVisualStyleBackColor = true;
             this.btnArray.Click += new System.EventHandler(this.btnArray_Click);
             // 
+            // btnTotal
+            // 
+            this.btnTotal.Location = new System.Drawing.Point(202, 371);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(182, 23);
+            this.btnTotal.TabIndex = 7;
+            this.btnTotal.Text = "Total de Tributos";
+            this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
+            // 
+            // btnPoupanca
+            // 
+            this.btnPoupanca.Location = new System.Drawing.Point(202, 415);
+            this.btnPoupanca.Name = "btnPoupanca";
+            this.btnPoupanca.Size = new System.Drawing.Size(182, 23);
+            this.btnPoupanca.TabIndex = 8;
+            this.btnPoupanca.Text = "Total de Contas Poupança";
+            this.btnPoupanca.UseVisualStyleBackColor = true;
+            this.btnPoupanca.Click += new System.EventHandler(this.btnPoupanca_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 550);
+            this.Controls.Add(this.btnPoupanca);
+            this.Controls.Add(this.btnTotal);
             this.Controls.Add(this.btnArray);
             this.Controls.Add(this.btnAccountUpdater);
             this.Controls.Add(this.btnBankBalance);
@@ -133,6 +157,8 @@
         private System.Windows.Forms.Button btnBankBalance;
         private System.Windows.Forms.Button btnAccountUpdater;
         private System.Windows.Forms.Button btnArray;
+        private System.Windows.Forms.Button btnTotal;
+        private System.Windows.Forms.Button btnPoupanca;
     }
 }
 

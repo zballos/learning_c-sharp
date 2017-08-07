@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Chapter6.Objects;
 
 namespace Chapter6
 {
@@ -21,7 +22,7 @@ namespace Chapter6
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.acc = new Account() {
+            this.acc = new SavingsAccount() {
                 Number = 100
             };
             this.acc.Deposit(250.0);

@@ -7,13 +7,11 @@ using Chapter6.Interfaces;
 
 namespace Chapter6.Objects
 {
-    class SavingsAccount : Account, ITaxable
+    class InvestmentAccount : Account, ITaxable
     {
-        public static int TotalAccounts { get; private set; }
-
-        public SavingsAccount()
+        public double CalculateTribute()
         {
-            SavingsAccount.TotalAccounts++;
+            return this.Balance * 0.03;
         }
 
         public override bool Withdraw(double value)
@@ -26,12 +24,12 @@ namespace Chapter6.Objects
             {
                 if (this.Titular.IsGreaterOfAge)
                 {
-                    this.Balance -= (value + 0.10);
+                    this.Balance -= (value + 0.15);
                     return true;
                 }
                 else if (value <= 200)
                 {
-                    this.Balance -= (value + 0.10);
+                    this.Balance -= (value + 0.15);
                     return true;
                 }
                 else
@@ -39,24 +37,6 @@ namespace Chapter6.Objects
                     return false;
                 }
             }
-        }
-
-        public override void Deposit(double value)
-        {
-            if (value > 0)
-            {
-                this.Balance += (value + 0.10);
-            }
-        }
-
-        public override void Update(double tax)
-        {
-            base.Update(3 * tax);
-        }
-
-        public double CalculateTribute()
-        {
-            return this.Balance * 0.02;
         }
     }
 }

@@ -6,37 +6,14 @@ using System.Threading.Tasks;
 
 namespace Chapter6
 {
-    class Account
+    abstract class Account
     {
         public int Number { get; set; }
         public double Balance { get; protected set; }
         public int Agency { get; set; }
         public Client Titular { get; set; }
 
-        public virtual bool Withdraw(double value)
-        {
-            if (value > this.Balance || value < 0)
-            {
-                return false;
-            }
-            else
-            {
-                if (this.Titular.IsGreaterOfAge)
-                {
-                    this.Balance -= value;
-                    return true;
-                }
-                else if (value <= 200)
-                {
-                    this.Balance -= value;
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+        public abstract bool Withdraw(double value);
 
         public virtual void Deposit(double value)
         {
