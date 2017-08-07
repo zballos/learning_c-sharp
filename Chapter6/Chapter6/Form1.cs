@@ -177,5 +177,19 @@ namespace Chapter6
             }
 
         }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            SavingsAccount sa = new SavingsAccount();
+            InvestmentAccount ic = new InvestmentAccount();
+            sa.Deposit(200.0);
+            ic.Deposit(300.0);
+
+            TotalOfTaxes t = new TotalOfTaxes();
+            t.Accumulates(sa);
+            t.Accumulates(ic);
+
+            MessageBox.Show("Total de taxas: " + t.Total);
+        }
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Taxable.cs" />
     <Compile Include="Objects\Account.cs" />
     <Compile Include="Objects\BankBalance.cs" />
     <Compile Include="Objects\Client.cs" />
@@ -67,8 +68,10 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\CurrentAccount.cs" />
+    <Compile Include="Objects\InvestmentAccount.cs" />
     <Compile Include="Objects\SavingsAccount.cs" />
     <Compile Include="Objects\AccountUpdater.cs" />
+    <Compile Include="Objects\TotalOfTaxes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

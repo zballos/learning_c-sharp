@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Chapter6.Interfaces;
 
 namespace Chapter6.Objects
 {
-    class SavingsAccount : Account
+    class SavingsAccount : Account, ITaxable
     {
         public override bool Withdraw(double value)
         {
@@ -44,6 +45,11 @@ namespace Chapter6.Objects
         public override void Update(double tax)
         {
             base.Update(3 * tax);
+        }
+
+        public double CalculateTribute()
+        {
+            return this.Balance * 0.02;
         }
     }
 }
