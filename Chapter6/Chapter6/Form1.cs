@@ -185,7 +185,7 @@ namespace Chapter6
             sa.Deposit(200.0);
             ic.Deposit(300.0);
 
-            TotalOfTaxes t = new TotalOfTaxes();
+            TaxManager t = new TaxManager();
             t.Accumulates(sa);
             t.Accumulates(ic);
 
