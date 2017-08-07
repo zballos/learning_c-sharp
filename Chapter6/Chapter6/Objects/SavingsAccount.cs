@@ -9,6 +9,13 @@ namespace Chapter6.Objects
 {
     class SavingsAccount : Account, ITaxable
     {
+        public static int TotalAccounts { get; private set; }
+
+        public SavingsAccount()
+        {
+            SavingsAccount.TotalAccounts++;
+        }
+
         public override bool Withdraw(double value)
         {
             if (value > this.Balance || value < 0)

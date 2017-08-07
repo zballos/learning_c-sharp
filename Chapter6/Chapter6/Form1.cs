@@ -107,7 +107,7 @@ namespace Chapter6
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Account acc = new SavingsAccount()
+            Account acc = new CurrentAccount()
             {
                 Titular = new Client("Edson Zeballos", 25)
             };
@@ -190,6 +190,18 @@ namespace Chapter6
             t.Accumulates(ic);
 
             MessageBox.Show("Total de taxas: " + t.Total);
+        }
+
+        private void btnPoupanca_Click(object sender, EventArgs e)
+        {
+            SavingsAccount sa1 = new SavingsAccount();
+            MessageBox.Show("Total de contas poupança: " + SavingsAccount.TotalAccounts);
+
+            SavingsAccount sa2 = new SavingsAccount();
+            MessageBox.Show("Total de contas poupança: " + SavingsAccount.TotalAccounts);
+
+            SavingsAccount sa3 = new SavingsAccount();
+            MessageBox.Show("Total de contas poupança: " + SavingsAccount.TotalAccounts);
         }
     }
 }
