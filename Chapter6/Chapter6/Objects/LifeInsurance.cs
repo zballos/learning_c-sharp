@@ -7,13 +7,11 @@ using Chapter6.Interfaces;
 
 namespace Chapter6.Objects
 {
-    class TotalOfTaxes
+    class LifeInsurance : ITaxable
     {
-        public double Total { get; private set; }
-
-        public void Accumulates(ITaxable t)
+        public double CalculateTribute()
         {
-            this.Total += t.CalculateTribute();
+            return 42.0;
         }
     }
 }
