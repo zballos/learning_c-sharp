@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Chapter6.Exceptions;
 using Chapter6.Objects;
 
 namespace Chapter6
@@ -62,7 +63,7 @@ namespace Chapter6
                 Number = 1,
                 Titular = new Client("Joana D'Arc", 40)
             };
-            account1.Deposit(2500.0);
+            account1.Deposit(500.0);
 
             Account account2 = new CurrentAccount()
             {
@@ -71,13 +72,18 @@ namespace Chapter6
             };
             account2.Deposit(1800.0);
 
-            if (account1.Withdraw(100.0))
+            try
             {
+                account1.Withdraw(-110.0);
                 MessageBox.Show("Saque efetuado com sucesso!");
-            }
-            else
+            }           
+            catch(InsufficientBalanceException exception)
             {
-                MessageBox.Show("Não foi possivel sacar!");
+                MessageBox.Show("Saldo insuficiente! Não foi possivel sacar. " + exception.Message);
+            }
+            catch (ArgumentException exception)
+            {
+                MessageBox.Show("Argumento inválido! Não foi possivel sacar. " + exception.Message);
             }
 
             account1.Transfer(500.0, account2);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Chapter6.Exceptions;
 using Chapter6.Interfaces;
 
 namespace Chapter6.Objects
@@ -16,27 +17,25 @@ namespace Chapter6.Objects
             SavingsAccount.TotalAccounts++;
         }
 
-        public override bool Withdraw(double value)
+        public override void Withdraw(double value)
         {
             if (value > this.Balance || value < 0)
             {
-                return false;
+                throw new ArgumentException();
             }
             else
             {
                 if (this.Titular.IsGreaterOfAge)
                 {
                     this.Balance -= (value + 0.10);
-                    return true;
                 }
                 else if (value <= 200)
                 {
                     this.Balance -= (value + 0.10);
-                    return true;
                 }
                 else
                 {
-                    return false;
+                    throw new InsufficientBalanceException();
                 }
             }
         }

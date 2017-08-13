@@ -13,7 +13,7 @@ namespace Chapter6
         public int Agency { get; set; }
         public Client Titular { get; set; }
 
-        public abstract bool Withdraw(double value);
+        public abstract void Withdraw(double value);
 
         public virtual void Deposit(double value)
         {
