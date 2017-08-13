@@ -1,4 +1,4 @@
-﻿namespace Chapter6
+﻿namespace Zballos
 {
     partial class Form3
     {

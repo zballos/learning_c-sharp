@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chapter6.Interfaces
+namespace Zballos.Interfaces
 {
     interface ITaxable
     {

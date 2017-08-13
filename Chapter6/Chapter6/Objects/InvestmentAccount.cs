@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Chapter6.Exceptions;
-using Chapter6.Interfaces;
+using Zballos.Exceptions;
+using Zballos.Interfaces;
 
-namespace Chapter6.Objects
+namespace Zballos.Objects
 {
     class InvestmentAccount : Account, ITaxable
     {

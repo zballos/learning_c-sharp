@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Chapter6.Objects;
+using Zballos.Objects;
 
-namespace Chapter6
+namespace Zballos
 {
     public partial class Form2 : Form
     {

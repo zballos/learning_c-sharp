@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Chapter6.Interfaces;
+using Zballos.Interfaces;
 
-namespace Chapter6.Objects
+namespace Zballos.Objects
 {
     class LifeInsurance : ITaxable
     {

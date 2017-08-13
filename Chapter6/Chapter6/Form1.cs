@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Chapter6.Exceptions;
-using Chapter6.Objects;
+using Zballos.Exceptions;
+using Zballos.Objects;
 
-namespace Chapter6
+namespace Zballos
 {
     public partial class Form1 : Form
     {

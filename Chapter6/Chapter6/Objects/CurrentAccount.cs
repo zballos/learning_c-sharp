@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Chapter6.Exceptions;
+using Zballos.Exceptions;
 
-namespace Chapter6.Objects
+namespace Zballos.Objects
 {
     class CurrentAccount : Account
     {
