@@ -209,5 +209,33 @@ namespace Zballos
             SavingsAccount sa3 = new SavingsAccount();
             MessageBox.Show("Total de contas poupança: " + SavingsAccount.TotalAccounts);
         }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            var accounts = new List<Account>();
+
+            var c1 = new CurrentAccount();
+            c1.Titular = new Client("Fulano de tal", 26);
+
+            accounts.Add(c1);
+
+            var c2 = new SavingsAccount();
+            c2.Titular = new Client("Jecca", 46);
+
+            accounts.Add(c2);
+
+            accounts.Remove(c1);
+
+            accounts.Add(c1);
+
+            MessageBox.Show("Tem contas? R: " + accounts.Contains(c1));
+
+            foreach (Account acc in accounts)
+            {
+                MessageBox.Show("Titular: " + acc.Titular.Name);
+            }
+
+            MessageBox.Show("Total de contas: " + accounts.Count);
+        }
     }
 }
