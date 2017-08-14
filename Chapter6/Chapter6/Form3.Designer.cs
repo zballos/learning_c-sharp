@@ -42,6 +42,7 @@
             this.textValue = new System.Windows.Forms.TextBox();
             this.btnTransfer = new System.Windows.Forms.Button();
             this.comboTransfer = new System.Windows.Forms.ComboBox();
+            this.btnNewAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboAccounts
@@ -164,11 +165,22 @@
             this.comboTransfer.Size = new System.Drawing.Size(121, 21);
             this.comboTransfer.TabIndex = 15;
             // 
+            // btnNewAccount
+            // 
+            this.btnNewAccount.Location = new System.Drawing.Point(327, 12);
+            this.btnNewAccount.Name = "btnNewAccount";
+            this.btnNewAccount.Size = new System.Drawing.Size(119, 23);
+            this.btnNewAccount.TabIndex = 16;
+            this.btnNewAccount.Text = "Nova Conta";
+            this.btnNewAccount.UseVisualStyleBackColor = true;
+            this.btnNewAccount.Click += new System.EventHandler(this.btnNewAccount_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 462);
+            this.Controls.Add(this.btnNewAccount);
             this.Controls.Add(this.comboTransfer);
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.label4);
@@ -207,5 +219,6 @@
         private System.Windows.Forms.TextBox textValue;
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.ComboBox comboTransfer;
+        private System.Windows.Forms.Button btnNewAccount;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zballos
 {
-    abstract class Account
+    public abstract class Account
     {
         public int Number { get; set; }
         public double Balance { get; protected set; }

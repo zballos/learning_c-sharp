@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zballos
 {
-    class Client
+    public class Client
     {
         public string Name { get; set; }
         public string Cpf { get; set; }
@@ -45,7 +45,7 @@ namespace Zballos
         public override bool Equals(object obj)
         {
             Client client = (Client)obj;
-            return this.Cpf.Equals(client.Cpf);
+            return this.Name.Equals(client.Name);
         }
 
         public override string ToString()

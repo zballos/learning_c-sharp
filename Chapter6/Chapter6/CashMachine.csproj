@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountRegistration.Designer.cs">
+      <DependentUpon>AccountRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exceptions\InsufficientBalanceException.cs" />
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
@@ -76,6 +82,9 @@
     <Compile Include="Objects\TaxManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AccountRegistration.resx">
+      <DependentUpon>AccountRegistration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
