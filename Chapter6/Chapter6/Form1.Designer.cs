@@ -38,6 +38,7 @@
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnPoupanca = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
+            this.btnEqToString = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClass
@@ -137,11 +138,22 @@
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
+            // btnEqToString
+            // 
+            this.btnEqToString.Location = new System.Drawing.Point(202, 496);
+            this.btnEqToString.Name = "btnEqToString";
+            this.btnEqToString.Size = new System.Drawing.Size(182, 23);
+            this.btnEqToString.TabIndex = 10;
+            this.btnEqToString.Text = "Equals e toString";
+            this.btnEqToString.UseVisualStyleBackColor = true;
+            this.btnEqToString.Click += new System.EventHandler(this.btnEqToString_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 550);
+            this.ClientSize = new System.Drawing.Size(597, 625);
+            this.Controls.Add(this.btnEqToString);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnPoupanca);
             this.Controls.Add(this.btnTotal);
@@ -172,6 +184,7 @@
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnPoupanca;
         private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.Button btnEqToString;
     }
 }
 

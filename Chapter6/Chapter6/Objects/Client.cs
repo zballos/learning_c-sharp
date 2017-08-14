@@ -41,5 +41,16 @@ namespace Zballos
                 return (greaterofAge || emancipated) && hasCpf;
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            Client client = (Client)obj;
+            return this.Cpf.Equals(client.Cpf);
+        }
+
+        public override string ToString()
+        {
+            return "Name: " + this.Name + "\nCPF: " + this.Cpf;
+        }
     }
 }

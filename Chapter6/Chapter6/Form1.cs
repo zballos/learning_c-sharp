@@ -237,5 +237,18 @@ namespace Zballos
 
             MessageBox.Show("Total de contas: " + accounts.Count);
         }
+
+        private void btnEqToString_Click(object sender, EventArgs e)
+        {
+            var c1 = new Client("Fulano de tal", 26);
+            c1.Cpf = "010.001.001-01";
+            
+            var c2 = new Client("Jecca", 46);
+            c2.Cpf = "001.001.001-05";
+
+            MessageBox.Show("Clients equals? " + c1.Equals(c2));
+            MessageBox.Show("Client c1: \n" + c1.ToString());
+            MessageBox.Show("Client c2: \n" + c2.ToString());
+        }
     }
 }
