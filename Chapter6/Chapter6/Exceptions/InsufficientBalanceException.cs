@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zballos.Interfaces
+namespace Zballos.Exceptions
 {
-    interface ITaxable
+    class InsufficientBalanceException : Exception
     {
-        double CalculateTribute();
     }
 }

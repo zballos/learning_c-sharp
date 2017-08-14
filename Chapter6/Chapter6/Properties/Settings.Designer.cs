@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Chapter6.Properties
+namespace Zballos.Properties
 {
 
 

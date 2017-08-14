@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Chapter6.Objects;
+using Chapter6;
+using Zballos.Objects;
 
-namespace Chapter6
+namespace Zballos
 {
     public partial class Form3 : Form
     {
         Account[] accounts;
+        private int accountSize;
 
         public Form3()
         {
@@ -22,7 +24,7 @@ namespace Chapter6
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            accounts = new Account[3];
+            accounts = new Account[10];
 
             accounts[0] = new SavingsAccount {
                 Number = 1,
@@ -45,6 +47,7 @@ namespace Chapter6
             {
                 comboAccounts.Items.Add(acc.Titular.Name);
                 comboTransfer.Items.Add(acc.Titular.Name);
+                this.accountSize++;
             }
         }
 
@@ -95,6 +98,19 @@ namespace Chapter6
             acc.Transfer(value, this.accounts[dest]);
 
             this.ShowAccount(acc);
+        }
+
+        private void btnNewAccount_Click(object sender, EventArgs e)
+        {
+            AccountRegistration accr = new AccountRegistration(this);
+            accr.ShowDialog();
+        }
+
+        public void NewAccount(Account acc)
+        {
+            this.accounts[this.accountSize] = acc;
+            this.accountSize++;
+            comboAccounts.Items.Add(acc.Titular.Name);
         }
     }
 }

@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Chapter6.Objects;
+using Zballos.Exceptions;
+using Zballos.Objects;
 
-namespace Chapter6
+namespace Zballos
 {
     public partial class Form1 : Form
     {
@@ -62,7 +63,7 @@ namespace Chapter6
                 Number = 1,
                 Titular = new Client("Joana D'Arc", 40)
             };
-            account1.Deposit(2500.0);
+            account1.Deposit(500.0);
 
             Account account2 = new CurrentAccount()
             {
@@ -71,13 +72,18 @@ namespace Chapter6
             };
             account2.Deposit(1800.0);
 
-            if (account1.Withdraw(100.0))
+            try
             {
+                account1.Withdraw(-110.0);
                 MessageBox.Show("Saque efetuado com sucesso!");
-            }
-            else
+            }           
+            catch(InsufficientBalanceException exception)
             {
-                MessageBox.Show("Não foi possivel sacar!");
+                MessageBox.Show("Saldo insuficiente! Não foi possivel sacar. " + exception.Message);
+            }
+            catch (ArgumentException exception)
+            {
+                MessageBox.Show("Argumento inválido! Não foi possivel sacar. " + exception.Message);
             }
 
             account1.Transfer(500.0, account2);
@@ -202,6 +208,47 @@ namespace Chapter6
 
             SavingsAccount sa3 = new SavingsAccount();
             MessageBox.Show("Total de contas poupança: " + SavingsAccount.TotalAccounts);
+        }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            var accounts = new List<Account>();
+
+            var c1 = new CurrentAccount();
+            c1.Titular = new Client("Fulano de tal", 26);
+
+            accounts.Add(c1);
+
+            var c2 = new SavingsAccount();
+            c2.Titular = new Client("Jecca", 46);
+
+            accounts.Add(c2);
+
+            accounts.Remove(c1);
+
+            accounts.Add(c1);
+
+            MessageBox.Show("Tem contas? R: " + accounts.Contains(c1));
+
+            foreach (Account acc in accounts)
+            {
+                MessageBox.Show("Titular: " + acc.Titular.Name);
+            }
+
+            MessageBox.Show("Total de contas: " + accounts.Count);
+        }
+
+        private void btnEqToString_Click(object sender, EventArgs e)
+        {
+            var c1 = new Client("Fulano de tal", 26);
+            c1.Cpf = "010.001.001-01";
+            
+            var c2 = new Client("Jecca", 46);
+            c2.Cpf = "001.001.001-05";
+
+            MessageBox.Show("Clients equals? " + c1.Equals(c2));
+            MessageBox.Show("Client c1: \n" + c1.ToString());
+            MessageBox.Show("Client c2: \n" + c2.ToString());
         }
     }
 }

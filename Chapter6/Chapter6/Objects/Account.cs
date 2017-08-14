@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chapter6
+namespace Zballos
 {
-    abstract class Account
+    public abstract class Account
     {
         public int Number { get; set; }
         public double Balance { get; protected set; }
         public int Agency { get; set; }
         public Client Titular { get; set; }
 
-        public abstract bool Withdraw(double value);
+        public abstract void Withdraw(double value);
 
         public virtual void Deposit(double value)
         {

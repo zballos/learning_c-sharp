@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chapter6
+namespace Zballos
 {
-    class Client
+    public class Client
     {
         public string Name { get; set; }
         public string Cpf { get; set; }
@@ -40,6 +40,17 @@ namespace Chapter6
 
                 return (greaterofAge || emancipated) && hasCpf;
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            Client client = (Client)obj;
+            return this.Name.Equals(client.Name);
+        }
+
+        public override string ToString()
+        {
+            return "Name: " + this.Name + "\nCPF: " + this.Cpf;
         }
     }
 }

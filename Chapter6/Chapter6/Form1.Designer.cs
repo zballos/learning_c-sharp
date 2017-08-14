@@ -1,4 +1,4 @@
-﻿namespace Chapter6
+﻿namespace Zballos
 {
     partial class Form1
     {
@@ -37,6 +37,8 @@
             this.btnArray = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnPoupanca = new System.Windows.Forms.Button();
+            this.btnList = new System.Windows.Forms.Button();
+            this.btnEqToString = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClass
@@ -126,11 +128,33 @@
             this.btnPoupanca.UseVisualStyleBackColor = true;
             this.btnPoupanca.Click += new System.EventHandler(this.btnPoupanca_Click);
             // 
+            // btnList
+            // 
+            this.btnList.Location = new System.Drawing.Point(202, 455);
+            this.btnList.Name = "btnList";
+            this.btnList.Size = new System.Drawing.Size(182, 23);
+            this.btnList.TabIndex = 9;
+            this.btnList.Text = "List Accounts";
+            this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            // 
+            // btnEqToString
+            // 
+            this.btnEqToString.Location = new System.Drawing.Point(202, 496);
+            this.btnEqToString.Name = "btnEqToString";
+            this.btnEqToString.Size = new System.Drawing.Size(182, 23);
+            this.btnEqToString.TabIndex = 10;
+            this.btnEqToString.Text = "Equals e toString";
+            this.btnEqToString.UseVisualStyleBackColor = true;
+            this.btnEqToString.Click += new System.EventHandler(this.btnEqToString_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 550);
+            this.ClientSize = new System.Drawing.Size(597, 625);
+            this.Controls.Add(this.btnEqToString);
+            this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnPoupanca);
             this.Controls.Add(this.btnTotal);
             this.Controls.Add(this.btnArray);
@@ -159,6 +183,8 @@
         private System.Windows.Forms.Button btnArray;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnPoupanca;
+        private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.Button btnEqToString;
     }
 }
 
