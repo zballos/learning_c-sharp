@@ -39,6 +39,8 @@
             this.btnPoupanca = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
             this.btnEqToString = new System.Windows.Forms.Button();
+            this.btnHashSet = new System.Windows.Forms.Button();
+            this.btnSortedSet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClass
@@ -148,11 +150,33 @@
             this.btnEqToString.UseVisualStyleBackColor = true;
             this.btnEqToString.Click += new System.EventHandler(this.btnEqToString_Click);
             // 
+            // btnHashSet
+            // 
+            this.btnHashSet.Location = new System.Drawing.Point(202, 537);
+            this.btnHashSet.Name = "btnHashSet";
+            this.btnHashSet.Size = new System.Drawing.Size(182, 23);
+            this.btnHashSet.TabIndex = 11;
+            this.btnHashSet.Text = "HashSet Example";
+            this.btnHashSet.UseVisualStyleBackColor = true;
+            this.btnHashSet.Click += new System.EventHandler(this.btnHashSet_Click);
+            // 
+            // btnSortedSet
+            // 
+            this.btnSortedSet.Location = new System.Drawing.Point(202, 579);
+            this.btnSortedSet.Name = "btnSortedSet";
+            this.btnSortedSet.Size = new System.Drawing.Size(182, 23);
+            this.btnSortedSet.TabIndex = 12;
+            this.btnSortedSet.Text = "SortedSet";
+            this.btnSortedSet.UseVisualStyleBackColor = true;
+            this.btnSortedSet.Click += new System.EventHandler(this.btnSortedSet_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 625);
+            this.ClientSize = new System.Drawing.Size(876, 625);
+            this.Controls.Add(this.btnSortedSet);
+            this.Controls.Add(this.btnHashSet);
             this.Controls.Add(this.btnEqToString);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnPoupanca);
@@ -185,6 +209,8 @@
         private System.Windows.Forms.Button btnPoupanca;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnEqToString;
+        private System.Windows.Forms.Button btnHashSet;
+        private System.Windows.Forms.Button btnSortedSet;
     }
 }
 

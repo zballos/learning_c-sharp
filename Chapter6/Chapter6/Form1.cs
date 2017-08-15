@@ -250,5 +250,37 @@ namespace Zballos
             MessageBox.Show("Client c1: \n" + c1.ToString());
             MessageBox.Show("Client c2: \n" + c2.ToString());
         }
+
+        private void btnHashSet_Click(object sender, EventArgs e)
+        {
+            var c1 = new Client("Fulano de tal", 26);
+            c1.Cpf = "010.001.001-01";
+
+            var c2 = new Client("Jecca", 46);
+            c2.Cpf = "001.001.001-05";
+
+            var clients = new HashSet<Client>();
+            clients.Add(c1);
+            clients.Add(c2);
+            clients.Add(c1);
+
+            foreach (Client c in clients)
+            {
+                MessageBox.Show(c.Name);
+            }
+        }
+
+        private void btnSortedSet_Click(object sender, EventArgs e)
+        {
+            SortedSet<string> words = new SortedSet<string>();
+            words.Add("Life");
+            words.Add("Death");
+            words.Add("Ananases");
+            words.Add("Bread");
+            foreach (string word in words)
+            {
+                MessageBox.Show(word);
+            }
+        }
     }
 }
