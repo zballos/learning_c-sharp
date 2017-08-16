@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Editor", "Editor", "{032EE6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor", "Editor\Editor.csproj", "{0F20AFA5-5E79-4DF1-8706-72A299E48D69}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Strings", "Strings", "{8E772A8E-8442-4391-AB38-972C899DDAF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringFunctions", "StringFunctions\StringFunctions.csproj", "{DA3DA753-6E50-4F65-B7CA-96D39D0D835F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{0F20AFA5-5E79-4DF1-8706-72A299E48D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F20AFA5-5E79-4DF1-8706-72A299E48D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F20AFA5-5E79-4DF1-8706-72A299E48D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA3DA753-6E50-4F65-B7CA-96D39D0D835F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA3DA753-6E50-4F65-B7CA-96D39D0D835F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA3DA753-6E50-4F65-B7CA-96D39D0D835F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA3DA753-6E50-4F65-B7CA-96D39D0D835F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0F20AFA5-5E79-4DF1-8706-72A299E48D69} = {032EE691-4D42-407A-A4F7-9DDA89D2C3CA}
+		{DA3DA753-6E50-4F65-B7CA-96D39D0D835F} = {8E772A8E-8442-4391-AB38-972C899DDAF8}
 	EndGlobalSection
 EndGlobal

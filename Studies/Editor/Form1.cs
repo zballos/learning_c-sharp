@@ -30,12 +30,8 @@ namespace Editor
                 Stream entry = File.Open("entryFile.txt", FileMode.Open);
                 StreamReader reader = new StreamReader(entry);
 
-                string line = reader.ReadLine();
-                while(line != null)
-                {
-                    textBox1.Text += line;
-                    line = reader.ReadLine();
-                }
+                string line = reader.ReadToEnd();
+                textBox1.Text = line;
                 reader.Close();
                 entry.Close();
             }
