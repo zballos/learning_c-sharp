@@ -27,25 +27,23 @@ namespace Editor
         {
             if (File.Exists("entryFile.txt"))
             {
-                Stream entry = File.Open("entryFile.txt", FileMode.Open);
-                StreamReader reader = new StreamReader(entry);
-
-                string line = reader.ReadToEnd();
-                textBox1.Text = line;
-                reader.Close();
-                entry.Close();
+                using (Stream entry = File.Open("entryFile.txt", FileMode.Open))
+                using (StreamReader reader = new StreamReader(entry))
+                {
+                    string line = reader.ReadToEnd();
+                    textBox1.Text = line;
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Stream outHere = File.Open("entryFile.txt", FileMode.Create);
-            StreamWriter writer = new StreamWriter(outHere);
-
-            writer.WriteLine(textBox1.Text);
+            using(Stream outHere = File.Open("entryFile.txt", FileMode.Create))
+            using(StreamWriter writer = new StreamWriter(outHere))
+            {
+                writer.WriteLine(textBox1.Text);
+            }
             
-            writer.Close();
-            outHere.Close();
             this.Close();
         }
     }
