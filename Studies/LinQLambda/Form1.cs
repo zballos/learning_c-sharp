@@ -108,5 +108,35 @@ namespace LinQLambda
 
             MessageBox.Show("Total é: " + total);
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var arr = new int[] { 12, 2, 31, 4, 53, 6, 70, 200, 41, 23, 55 };
+
+            var ordered =
+                from n in arr
+                orderby n
+                select n;
+
+            string result = "";
+            foreach (int n in ordered)
+            {
+                result += n + "\n";
+            }
+            MessageBox.Show(result);
+
+            var orderedAccount =
+                from acc in myList
+                where acc.Balance > 1000
+                orderby acc.Number descending
+                select acc;
+
+            string resultAccount = "";
+            foreach (Account a in orderedAccount)
+            {
+                resultAccount += a.Titular + " N°: " + a.Number + "\n";
+            }
+            MessageBox.Show(resultAccount);
+        }
     }
 }
