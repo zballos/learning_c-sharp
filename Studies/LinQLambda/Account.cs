@@ -9,9 +9,11 @@ namespace LinQLambda
     class Account
     {
         public double Balance { get; private set; }
-
-        public Account(double balance)
+        public string Titular { get; set; }
+        
+        public Account(string titular, double balance)
         {
+            this.Titular = titular;
             this.Balance = balance;
         }
     }
