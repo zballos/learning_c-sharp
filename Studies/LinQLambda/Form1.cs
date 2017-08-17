@@ -99,5 +99,14 @@ namespace LinQLambda
                 MessageBox.Show("Titular é: " + a.Titular + "\nNúmero: " + a.Number);
             }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int [] arr = { 12, 2, 31, 4, 53, 6, 70 };
+
+            int total = arr.Where(x => x >= 15).Sum();
+
+            MessageBox.Show("Total é: " + total);
+        }
     }
 }
