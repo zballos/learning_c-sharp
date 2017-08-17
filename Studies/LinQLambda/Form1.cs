@@ -46,6 +46,7 @@ namespace LinQLambda
             myList.Add(AccountWithBalance("Marcos", 1, 3000.00));
             myList.Add(AccountWithBalance("Rashid", 2, 4500.00));
             myList.Add(AccountWithBalance("Gilbert", 3, 1500.00));
+            myList.Add(AccountWithBalance("Joaquina", 6, 1600.00));
             myList.Add(AccountWithBalance("Geovanna", 4, 4200.00));
             myList.Add(AccountWithBalance("Maria", 5, 1600.00));
         }
@@ -135,6 +136,18 @@ namespace LinQLambda
             foreach (Account a in orderedAccount)
             {
                 resultAccount += a.Titular + " N°: " + a.Number + "\n";
+            }
+            MessageBox.Show(resultAccount);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var orderedAccount = myList.OrderBy(acc => acc.Balance).ThenByDescending(acc => acc.Number);
+
+            string resultAccount = "";
+            foreach (Account a in orderedAccount)
+            {
+                resultAccount += a.Titular + " N°: " + a.Number + " Saldo: " + a.Balance + "\n";
             }
             MessageBox.Show(resultAccount);
         }
