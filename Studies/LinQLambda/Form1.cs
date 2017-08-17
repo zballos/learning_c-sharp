@@ -36,18 +36,18 @@ namespace LinQLambda
             MessageBox.Show("Valor total é: " + total);
         }
 
-        private Account AccountWithBalance(string titular, double v)
+        private Account AccountWithBalance(string titular, int number, double v)
         {
-            return new Account(titular, v);
+            return new Account(titular, number, v);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            myList.Add(AccountWithBalance("Marcos", 3000.00));
-            myList.Add(AccountWithBalance("Rachid", 4500.00));
-            myList.Add(AccountWithBalance("Gilbert", 1500.00));
-            myList.Add(AccountWithBalance("Geovanna", 4200.00));
-            myList.Add(AccountWithBalance("Maria", 1600.00));
+            myList.Add(AccountWithBalance("Marcos", 1, 3000.00));
+            myList.Add(AccountWithBalance("Rashid", 2, 4500.00));
+            myList.Add(AccountWithBalance("Gilbert", 3, 1500.00));
+            myList.Add(AccountWithBalance("Geovanna", 4, 4200.00));
+            myList.Add(AccountWithBalance("Maria", 5, 1600.00));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,6 +60,16 @@ namespace LinQLambda
             foreach (Account a in filtered)
             {
                 MessageBox.Show("Titular é: " + a.Titular);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var filtered = myList.Where(acc => acc.Balance > 4000 && acc.Number < 1000);
+                
+            foreach (Account a in filtered)
+            {
+                MessageBox.Show("Titular é: " + a.Titular + " Número: " + a.Number);
             }
         }
     }
