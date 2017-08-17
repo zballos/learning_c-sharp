@@ -72,5 +72,32 @@ namespace LinQLambda
                 MessageBox.Show("Titular é: " + a.Titular + " Número: " + a.Number);
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var lessBalance = myList.Min(acc => acc.Balance);
+
+            MessageBox.Show("Menor saldo é: " + lessBalance);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int amount = myList.Count(acc => acc.Balance < 5000);
+
+            MessageBox.Show("Quantidade de contas com saldo menor de 5000: " + amount);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var filtered =
+                from acc in myList
+                where acc.Number < 5
+                select new { acc.Titular, acc.Number };
+
+            foreach (var a in filtered)
+            {
+                MessageBox.Show("Titular é: " + a.Titular + "\nNúmero: " + a.Number);
+            }
+        }
     }
 }
