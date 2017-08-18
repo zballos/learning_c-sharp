@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LinQLambda
+namespace ExtensionMethods
 {
-    class Account
+    public class Account
     {
-        public double Balance { get; private set; }
+        public double Balance { get; set; }
         public string Titular { get; set; }
-        public int Number { get; private set; }
+        public int Number { get; set; }
         
+        public Account() { }
+
         public Account(string titular, int number, double balance)
         {
             this.Titular = titular;

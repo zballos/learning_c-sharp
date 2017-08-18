@@ -25,5 +25,13 @@ namespace ExtensionMethods
                 MessageBox.Show(newText);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Account acc = Account.GetAccounts()[1];
+
+            Serializer serialize = new Serializer();
+            System.Console.Write(Serializer.AsXml(acc));
+        }
     }
 }
