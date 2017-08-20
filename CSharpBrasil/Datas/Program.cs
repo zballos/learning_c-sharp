@@ -23,6 +23,20 @@ namespace Datas
             Debug.WriteLine(dateTime.ToString("hh:mm"));
             Debug.WriteLine(dateTime.ToString("HH:mm"));
             Debug.WriteLine(dateTime.ToString("HH:mm:ss.fff"));
+
+            Debug.WriteLine(dateTime.ToString("D"));
+            Debug.WriteLine(dateTime.ToString("m"));
+            Debug.WriteLine(dateTime.ToString("Y"));
+
+            Debug.WriteLine(dateTime.ToString("g"));
+            Debug.WriteLine(dateTime.ToString("G"));
+
+            Debug.WriteLine(dateTime.ToString("O"));
+            Debug.WriteLine(DateTime.Parse(dateTime.ToString("O")).ToString("dd/MM/yyyy HH:mm:ss.fff"));
+
+            Debug.WriteLine(dateTime.ToString("t"));
+            Debug.WriteLine(dateTime.ToString("T"));
+
         }
     }
 }
