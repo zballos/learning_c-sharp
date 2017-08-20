@@ -13,10 +13,17 @@ namespace CEP
         static void Main(string[] args)
         {
             string cep = "79020200";
-            string url = "https://viacep.com.br/ws/"+ cep +"/json/";
+            string result = GetEnderecoJson(cep);
+
+            Debug.WriteLine(result);
+        }
+
+        private static string GetEnderecoJson(string cep)
+        {
+            string url = "https://viacep.com.br/ws/" + cep + "/json/";
 
             string result = new HttpClient().GetStringAsync(url).Result;
-            Debug.WriteLine(result);
+            return result;
         }
     }
 }
