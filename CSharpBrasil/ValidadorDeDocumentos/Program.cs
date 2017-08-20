@@ -23,14 +23,13 @@ namespace ValidadorDeDocumentos
 
         private static void ValidarCPF(string cpf)
         {
-            try
+            if(new CPFValidator().IsValid(cpf))
             {
-                new CPFValidator().AssertValid(cpf);
                 Debug.WriteLine("CPF Válido! " + cpf);
             }
-            catch (Exception e)
+            else
             {
-                Debug.WriteLine("CPF Inválido! " + cpf + " Erro: " + e.ToString());
+                Debug.WriteLine("CPF Inválido! " + cpf);
             }
         }
     }
