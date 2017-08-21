@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Caelum.Stella.CSharp.Http;
 
 namespace CEP
 {
@@ -16,6 +17,20 @@ namespace CEP
             string result = GetEnderecoJson(cep);
 
             Debug.WriteLine(result);
+
+            ViaCEP viaCEP = new ViaCEP();
+            string enderecoJson = viaCEP.GetEnderecoJson(cep);
+            Debug.WriteLine(enderecoJson);
+
+            string enderecoXml = viaCEP.GetEnderecoXml(cep);
+            Debug.WriteLine(enderecoXml);
+
+            var task = viaCEP.GetEnderecoJsonAsync(cep);
+            Debug.WriteLine(task.Result);
+
+            var endereco = viaCEP.GetEndereco(cep);
+            Debug.WriteLine("Logradouro: {0}, Bairro: {1}, Cidade: {2}", endereco.Logradouro, endereco.Bairro, endereco.Localidade);
+
         }
 
         private static string GetEnderecoJson(string cep)
