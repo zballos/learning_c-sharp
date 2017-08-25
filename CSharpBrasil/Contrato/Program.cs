@@ -13,8 +13,18 @@ namespace Contrato
 
             var contrato = new
             {
-                Empresa = "Papaléguas e Coiote Ltda.",
-                Funcionario = "Pé de Pano da Silva",
+                Empresa = new
+                {
+                    RazaoSocial = "Papaléguas e Coiote Ltda.",
+                    CNPJ = "67651953000190"
+                },
+                Funcionario = new {
+                    Nome = "Pé de Pano da Silva",
+                    CPF = "97717899108",
+                    RG = "273267772",
+                    Nacionalidade = "Brasileira",
+                    EstadoCivil = "Solteiro"
+                },
                 Inicio = new DateTime(2017, 08, 24),
                 Cargo = "Corredor Profissional",
                 Salario = 2500.00
@@ -24,9 +34,9 @@ namespace Contrato
             string documento = $@"
                 CONTRATO INDIVIDUAL DE TRABALHO TEMPORÁRIO
 
-EMPREGADOR: {contrato.Empresa}, com sede à (LOGRADOURO), (NUMERO), (BAIRRO), CEP (CEP), (LOCALIDADE), (UF), inscrita no CNPJ sob nº (CNPJ);
+EMPREGADOR: {contrato.Empresa.RazaoSocial}, com sede à (LOGRADOURO), (NUMERO), (BAIRRO), CEP (CEP), (LOCALIDADE), (UF), inscrita no CNPJ sob nº {contrato.Empresa.CNPJ};
 
-EMPREGADO: {contrato.Funcionario}, (NACIONALIDADE), (ESTADO CIVIL), portador da cédula de identidade R.G. nº (RG) e CPF/MF nº (CPF), residente e domiciliado na (LOGRADOURO), (NUMERO), (BAIRRO), CEP (CEP), (LOCALIDADE), (UF).
+EMPREGADO: {contrato.Funcionario.Nome}, {contrato.Funcionario.Nacionalidade}, {contrato.Funcionario.EstadoCivil}, portador da cédula de identidade R.G. nº {contrato.Funcionario.RG} e CPF/MF nº {contrato.Funcionario.CPF}, residente e domiciliado na (LOGRADOURO), (NUMERO), (BAIRRO), CEP (CEP), (LOCALIDADE), (UF).
 
 Pelo presente instrumento particular de contrato individual de trabalho, fica justo e contratado o seguinte:
 
@@ -48,10 +58,10 @@ Como prova do acordado, assinam instrumento, afirmado e respeitando seu teor por
 
 
 _______________________________________________________
-{contrato.Empresa}
+{contrato.Empresa.RazaoSocial}
 
 _______________________________________________________
-{contrato.Funcionario}
+{contrato.Funcionario.Nome}
 
 _______________________________________________________
 (Nome, R.G,Testemunha)
