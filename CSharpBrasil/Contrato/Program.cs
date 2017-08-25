@@ -41,9 +41,9 @@ namespace Contrato
             string documento = $@"
                 CONTRATO INDIVIDUAL DE TRABALHO TEMPORÁRIO
 
-EMPREGADOR: {contrato.Empresa.RazaoSocial}, com sede à (LOGRADOURO), (NUMERO), (BAIRRO), CEP (CEP), (LOCALIDADE), (UF), inscrita no CNPJ sob nº {contrato.Empresa.CNPJ};
+EMPREGADOR: {contrato.Empresa.RazaoSocial}, com sede à {contrato.Empresa.Endereco.Logradouro}, {contrato.Empresa.Numero}, {contrato.Empresa.Endereco.Bairro}, CEP {contrato.Empresa.Endereco.CEP}, {contrato.Empresa.Endereco.Localidade}, {contrato.Empresa.Endereco.UF}, inscrita no CNPJ sob nº {contrato.Empresa.CNPJ};
 
-EMPREGADO: {contrato.Funcionario.Nome}, {contrato.Funcionario.Nacionalidade}, {contrato.Funcionario.EstadoCivil}, portador da cédula de identidade R.G. nº {contrato.Funcionario.RG} e CPF/MF nº {contrato.Funcionario.CPF}, residente e domiciliado na (LOGRADOURO), (NUMERO), (BAIRRO), CEP (CEP), (LOCALIDADE), (UF).
+EMPREGADO: {contrato.Funcionario.Nome}, {contrato.Funcionario.Nacionalidade}, {contrato.Funcionario.EstadoCivil}, portador da cédula de identidade R.G. nº {contrato.Funcionario.RG} e CPF/MF nº {contrato.Funcionario.CPF}, residente e domiciliado na {contrato.Funcionario.Endereco.Logradouro}, {contrato.Funcionario.Numero}, {contrato.Funcionario.Endereco.Bairro}, CEP {contrato.Funcionario.Endereco.CEP}, {contrato.Funcionario.Endereco.Localidade}, {contrato.Funcionario.Endereco.UF}.
 
 Pelo presente instrumento particular de contrato individual de trabalho, fica justo e contratado o seguinte:
 
