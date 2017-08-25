@@ -38,6 +38,8 @@ namespace Contrato
 
             };
 
+            DateTime data = DateTime.Today;
+
             string documento = $@"
                 CONTRATO INDIVIDUAL DE TRABALHO TEMPORÁRIO
 
@@ -61,7 +63,7 @@ Cláusula 6ª - O EMPREGADO obedecerá o regulamento interno da empresa, e filos
 
 Como prova do acordado, assinam instrumento, afirmado e respeitando seu teor por inteiro, e firmam conjuntamente a este duas testemunhas, comprovando as razões descritas.
 
-(LOCALIDADE), (DATA POR EXTENSO)
+(LOCALIDADE), {data.ToString("D")}
 
 
 _______________________________________________________
