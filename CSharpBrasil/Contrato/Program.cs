@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Caelum.Stella.CSharp.Http;
 
 namespace Contrato
 {
@@ -11,19 +12,25 @@ namespace Contrato
         static void Main(string[] args)
         {
 
+            ViaCEP viaCEP = new ViaCEP();
+
             var contrato = new
             {
                 Empresa = new
                 {
                     RazaoSocial = "Papaléguas e Coiote Ltda.",
-                    CNPJ = "67651953000190"
+                    CNPJ = "67651953000190",
+                    Endereco = viaCEP.GetEndereco("56322420"),
+                    Numero = "12345"
                 },
                 Funcionario = new {
                     Nome = "Pé de Pano da Silva",
                     CPF = "97717899108",
                     RG = "273267772",
                     Nacionalidade = "Brasileira",
-                    EstadoCivil = "Solteiro"
+                    EstadoCivil = "Solteiro",
+                    Endereco = viaCEP.GetEndereco("12924846"),
+                    Numero = "54321"
                 },
                 Inicio = new DateTime(2017, 08, 24),
                 Cargo = "Corredor Profissional",
