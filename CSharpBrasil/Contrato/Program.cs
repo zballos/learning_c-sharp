@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Caelum.Stella.CSharp.Format;
 using Caelum.Stella.CSharp.Http;
+using Caelum.Stella.CSharp.Vault;
 
 namespace Contrato
 {
@@ -19,22 +21,22 @@ namespace Contrato
                 Empresa = new
                 {
                     RazaoSocial = "Papaléguas e Coiote Ltda.",
-                    CNPJ = "67651953000190",
+                    CNPJ = new CNPJFormatter().Format("67651953000190"),
                     Endereco = viaCEP.GetEndereco("56322420"),
                     Numero = "12345"
                 },
                 Funcionario = new {
                     Nome = "Pé de Pano da Silva",
-                    CPF = "97717899108",
+                    CPF = new CPFFormatter().Format("97717899108"),
                     RG = "273267772",
                     Nacionalidade = "Brasileira",
                     EstadoCivil = "Solteiro",
                     Endereco = viaCEP.GetEndereco("12924846"),
                     Numero = "54321"
                 },
-                Inicio = new DateTime(2017, 08, 24),
+                Inicio = new DateTime(2017, 08, 24).ToString("d"),
                 Cargo = "Corredor Profissional",
-                Salario = 2500.00
+                Salario = new Money(3108.80)
 
             };
 
@@ -53,7 +55,7 @@ Cláusula 1ª - O EMPREGADO prestará ao EMPREGADOR, a partir de {contrato.Inici
 
 Cláusula 2ª - Não haverá expediente nos dias de sábado, sendo prestado a compensação de horário semanal;
 
-Cláusula 3ª - O EMPREGADOR pagará mensalmente, ao EMPREGADO, a título de salário a importância de {contrato.Salario} (SALÁRIO POR EXTENSO), com os descontos previstos por lei;
+Cláusula 3ª - O EMPREGADOR pagará mensalmente, ao EMPREGADO, a título de salário a importância de {contrato.Salario.ToString()} ({contrato.Salario.Extenso()}), com os descontos previstos por lei;
 
 Cláusula 4ª - Estará o EMPREGADO subordinado a legislação vigente no que diz respeito aos descontos de faltas e demais sanções disciplinares contidas na Consolidação das Leis do Trabalho.
 
@@ -63,7 +65,7 @@ Cláusula 6ª - O EMPREGADO obedecerá o regulamento interno da empresa, e filos
 
 Como prova do acordado, assinam instrumento, afirmado e respeitando seu teor por inteiro, e firmam conjuntamente a este duas testemunhas, comprovando as razões descritas.
 
-(LOCALIDADE), {data.ToString("D")}
+{contrato.Empresa.Endereco.Localidade}, {data.ToString("D")}
 
 
 _______________________________________________________
